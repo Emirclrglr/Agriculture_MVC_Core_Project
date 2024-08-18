@@ -1,0 +1,53 @@
+﻿@using EntityLayer.Concrete
+@model List<Service>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+            <div class="col-12 grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body">
+                  <h1 class="card-title text-center">Hizmetlerim</h1>
+                    <table class="table table-bordered border-2">
+                      <thead>
+                        <tr>
+                            <td align="center">#</td>
+                            <td align="center">Hizmet Adı</td>
+                            <td align="center">Sil</td>
+                            <td align="center">Güncelle</td>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        @if (Model.Count != 0)
+                        {
+                                 @foreach (var item in Model)
+                                {
+                                        <tr>
+                                          <td align="center">@item.ServiceId</td>
+                                          <td align="center">@item.ServiceTitle</td>
+                                          <td align="center"><a href="/Service/DeleteService/@item.ServiceId" class="btn btn-outline-danger">Sil</a></td>
+                                          <td align="center"><a href="/Service/UpdateService/@item.ServiceId" class="btn btn-outline-success">Güncelle</a></td>
+                                        </tr>
+                                }
+                        }
+                        else
+                        {
+                            <tr>
+                                <td colspan="8" class="alert alert-danger text-center" role="alert"> Hizmet Kaydı Bulunamamıştır!
+                                    <a href="/Service/AddService/" class="alert-link">Lütfen Yeni Bir Hizmet Girişi Yapınız!</a>
+                                </td>
+                            </tr>
+                        }
+                 </tbody>
+                    </table>
+                    <br />
+                    <a href="/Service/AddService/" class="btn btn-outline-info">Yeni Hizmet Kaydı</a>
+                </div>
+              </div>
+            </div>
+
+
+
+
+

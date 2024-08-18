@@ -1,0 +1,49 @@
+﻿@model EntityLayer.Concrete.Team
+@{
+    ViewData["Title"] = "UpdatePerson";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+  <div class="col-12 grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title">Personel Güncelle</h4>
+                  <form method="post" class="forms-sample">
+                    @Html.HiddenFor(x=>x.PersonId)
+                    <div class="form-group">
+                      <label for="exampleInputName1">Personel Adı<sup class="text-danger">*</sup></label>
+                      <input type="text" class="form-control" asp-for="PersonName" id="inptitle" placeholder="Ad ve Soyad">
+                      <span class="text-danger" asp-validation-for="PersonName"></span>
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputEmail3">Unvan<sup class="text-danger">*</sup></label>
+                      <input type="text" class="form-control" asp-for="PersonTitle" id="intdesc" placeholder="Unvan">
+                      <span class="text-danger" asp-validation-for="PersonTitle"></span>
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputPassword4">Görsel Yolu<sup class="text-danger">*</sup></label>
+                      <input type="text" class="form-control" asp-for="ImageUrl" id="inpimage" placeholder="Görsel Yolu">
+                      <span class="text-danger" asp-validation-for="ImageUrl"></span>
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputPassword4">Facebook</label>
+                      <input type="text" class="form-control" asp-for="FacebookUrl" id="fcbook" placeholder="Facebook Url">
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputPassword4">Twitter</label>
+                      <input type="text" class="form-control" asp-for="TwitterUrl" id="twitter" placeholder="Twitter Url">
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputPassword4">Instagram</label>
+                      <input type="text" class="form-control" asp-for="InstagramUrl" id="instagram" placeholder="Instagram Url">
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputPassword4">Web Sitesi</label>
+                      <input type="text" class="form-control" asp-for="WebsiteUrl" id="wbsite" placeholder="Web Sitesi Url">
+                    </div>
+                    <button type="submit" class="btn btn-outline-info me-2">Kaydet</button>
+                  </form>
+                </div>
+              </div>
+            </div>
+

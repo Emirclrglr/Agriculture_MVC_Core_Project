@@ -1,0 +1,29 @@
+﻿@model EntityLayer.Concrete.Contact
+@{
+    ViewData["Title"] = "ViewMessage";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+ <div class="col-12 grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title">Mesaj</h4>
+                  <form method="post" class="forms-sample">
+                    <input type="hidden" asp-asp-for="Id" />
+                    <div class="form-group">
+                      <label asp-for="Name">Gönderen</label>
+                      <input type="text" class="form-control" asp-for="Name">
+                    </div>
+                    <div class="form-group">
+                      <label asp-for="Mail">Gönderen Mail</label>
+                      <input type="email" class="form-control" asp-for="Mail">
+                    </div>
+                    <div class="form-group">
+                      <label asp-for="Message">Mesaj</label>
+                      <textarea type="text" class="form-control" asp-for="Message" rows="6"></textarea>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+

@@ -1,0 +1,54 @@
+﻿@using EntityLayer.Concrete
+@model List<Gallery>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+            <div class="col-12 grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body">
+                  <h1 class="card-title text-center">Galeri</h1>
+                    <table class="table table-bordered border-2">
+                      <thead>
+                        <tr>
+                            <td align="center">Görsel</td>
+                            <th>Başlık</th>
+                            <th>Açıklama</th>
+                            <td align="center">Sil</td>
+                            <td align="center">Güncelle</td>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        @if (Model.Count != 0)
+                        {
+                                 @foreach (var item in Model)
+                                {
+                                        <tr>
+                                          <td align="center" class="py-1">
+                                            <img src="@item.ImageUrl" alt="image"/>
+                                         </td>
+                                          <td>@item.Title</td>
+                                          <td>@item.Description</td>
+                                          <td align="center"><a href="/Gallery/DeleteGallery/@item.Id" class="btn btn-outline-danger">Sil</a></td>
+                                          <td align="center"><a href="/Gallery/UpdateGallery/@item.Id" class="btn btn-outline-success">Güncelle</a></td>
+                                        </tr>
+                                }
+                        }
+                        else
+                        {
+                            <tr>
+                                <td colspan="8" class="alert alert-danger text-center" role="alert"> Geleri Veri Kaydı Bulunamamıştır!
+                                    <a href="/Gallery/AddGallery/" class="alert-link">Lütfen Yeni Bir Galeri Verisi Girişi Yapınız!</a>
+                                </td>
+                            </tr>
+                        }
+                 </tbody>
+                    </table>
+                    <br />
+                    <a href="/Gallery/AddGallery/" class="btn btn-outline-info">Yeni Galeri Kaydı</a>
+                </div>
+              </div>
+            </div>
+

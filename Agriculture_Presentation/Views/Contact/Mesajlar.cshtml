@@ -1,0 +1,50 @@
+﻿@using EntityLayer.Concrete
+@model List<Contact>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="col-12 grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body">
+                  <h1 class="card-title text-center">Mesajlar</h1>
+                    <table class="table table-bordered border-2">
+                      <thead>
+                        <tr>
+                            <th>Gönderen</th>
+                            <th>Mail</th>
+                            <th>Mesaj</th>
+                            <th>Tarih</th>
+                            <td align="center">Görüntüle</td>
+                            <td align="center">Sil</td>
+                        </tr>
+                      </thead>
+                      <tbody>
+
+                                @foreach (var item in Model)
+                                {
+                                        <tr>
+                                          <td>@item.Name</td>
+                                          <td>@item.Mail</td>
+                                            @if (item.Message.Length >= 50)
+                                            {
+                                                <td>@item.Message.Substring(0,50)...</td>
+                                            }
+                                            else
+                                            {
+                                                <td>@item.Message</td>
+                                            }
+                                          <td>@item.Date.ToShortDateString()</td>
+                                          <td align="center"><a href="/Contact/ViewMessage/@item.ContactId" class="btn btn-outline-info">Görüntüle</a></td>
+                                          <td align="center"><a href="/Contact/DeleteMessage/@item.ContactId" class="btn btn-outline-danger">Sil</a></td>
+                                        </tr>
+                                }
+                       
+                 </tbody>
+                    </table>
+                </div>
+              </div>
+            </div>
+

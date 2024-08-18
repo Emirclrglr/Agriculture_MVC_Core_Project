@@ -1,0 +1,58 @@
+﻿@model Agriculture_Presentation.Models.UserRegisterViewModel
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+	<title>Admin Kayıt Paneli</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<link rel="stylesheet" href="~/snow-login-form-starter/css/style.css" type="text/css" media="all" />
+</head>
+
+<body>
+	<section class="w3l-login">
+		<div class="overlay">
+			<div class="wrapper">
+				<div class="logo">
+					<a class="brand-logo" href="index.html">Admin Kayıt Paneli</a>
+				</div>
+				<div class="form-section">
+					<form method="post" class="signin-form">
+						<div class="form-input">
+							<input type="text" placeholder="Kullanıcı adınız" required="" asp-for="Username" autofocus>
+						</div>
+						<div class="form-input">
+							<input type="email" placeholder="Mail Adresiniz" required="" asp-for="Mail" autofocus>
+						</div>
+						<div class="form-input">
+							<input type="password" placeholder="Şifreniz" asp-for="Password" required="">
+						</div>
+
+						<div class="form-input">
+							<input type="password" placeholder="Şifre Tekrar" asp-for="ConfirmPassword" required="">
+						</div>
+						<button type="submit" class="btn btn-primary theme-button mt-4">Kayıt Ol</button>
+					</form>
+				</div>
+			</div>
+		</div>
+		<div id='stars'></div>
+		<div id='stars2'></div>
+		<div id='stars3'></div>
+
+		<!-- copyright -->
+		<div class="copy-right">
+			<p>&copy;@DateTime.Now.Year Agriculture Admin Paneli. Tüm Hakları Saklıdır | Design by Exodien</p>
+		</div>
+		<!-- //copyright -->
+	</section>
+
+	<!-- /login form -->
+</body>
+
+</html>

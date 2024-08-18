@@ -1,0 +1,15 @@
+﻿@using EntityLayer.Concrete
+@model List<Address>
+<div class="col-md-3 contact-left">
+	@foreach (var item in Model)
+	{
+		<h4>Adresimiz</h4>
+		<p>@item.Desc1</p>
+		<p>@item.Desc2</p>
+		<p>@item.Desc3, Türkiye</p>
+		<h4>Telefon</h4>
+		<p>+(090) @item.Desc4</p>
+	}
+	
+
+</div>

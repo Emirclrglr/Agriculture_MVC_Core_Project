@@ -1,0 +1,44 @@
+﻿@using EntityLayer.Concrete
+@model List<Gallery>
+<div class="gallery" id="gallery">
+    <div class="container">
+        <h3 class="tittle">Galerimiz</h3>
+        <p class="heading-btm-w3ls">Çeşitli çalışmalarımızdan görseller.</p>
+        <div class="agile_gallery_grids w3-agile">
+            <ul class="clearfix demo">
+                @foreach (var item in Model)
+                {
+                    <li>
+                        <div class="gallery-grid1">
+                            <div class="img-container">
+                                <img src="@item.ImageUrl" alt=" " class="img-responsive" />
+                            </div>
+                            <div class="p-mask">
+                                <h4>@item.Title</h4>
+                                <p>@item.Description</p>
+                            </div>
+                        </div>
+                    </li>
+                }
+            </ul>
+        </div>
+    </div>
+</div>
+
+<style>
+.gallery-grid1 {
+    position: relative;
+}
+
+.img-container {
+    width: 200%;
+    height: 400px; /* İstediğiniz yüksekliği belirleyin */
+    overflow: hidden;
+}
+
+.img-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+</style>
